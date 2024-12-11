@@ -1,0 +1,16 @@
+Parte 1: Preparazione degli Host
+Utilizzando Mininet, sono stati configurati due host:
+H1: impostato come client.
+H4: configurato come server web.
+Sul client (H1), è stata avviata una sessione di acquisizione di pacchetti con tcpdump, salvando i dati in un file .pcap.
+Per generare traffico, è stato aperto un browser su H1 per connettersi al server H4.
+Parte 2: Analisi dei Pacchetti con Wireshark
+Il file .pcap catturato è stato aperto in Wireshark per analizzare i pacchetti TCP.
+Sono stati applicati filtri per concentrarsi sui primi tre pacchetti dell’handshake TCP a tre vie:
+Primo pacchetto: flag SYN con numero di sequenza relativo pari a 0.
+Secondo pacchetto: flag SYN/ACK con numeri di sequenza e riconoscimento incrementati.
+Terzo pacchetto: flag ACK, che conferma la stabilità della connessione.
+Attraverso questa analisi, è stato possibile osservare gli elementi chiave come indirizzi IP, porte e flag di controllo.
+Parte 3: Visualizzazione dei Pacchetti con tcpdump
+Oltre all’analisi in Wireshark, i pacchetti catturati sono stati visualizzati con tcpdump, applicando filtri per evidenziare esclusivamente il traffico TCP.
+Questo approccio ha permesso di validare i risultati di Wireshark e confrontare le informazioni acquisite.
